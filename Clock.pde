@@ -5,16 +5,23 @@ class Clock extends Item{
   }
   
   void display(){
+    if(isAlive==true){
     image(clock,x,y);
+    }
   }
   
   void checkCollision(Player player){
+    if(isAlive==true){
+      if(isHit(x,y, w, h, player.x, player.y, player.w, player.h)){ 
+      
+        isAlive=false;
     
-     if(isHit(this.x, this.y, w, h, player.x, player.y, player.w, player.h)){
-       addTime(CLOCK_BONUS_SECONDS);
-       isAlive=false;
+        addTime(CLOCK_BONUS_SECONDS);
      }
+    }
   }
+  
+ 
     
 	// Requirement #2: Complete Clock Class
 
