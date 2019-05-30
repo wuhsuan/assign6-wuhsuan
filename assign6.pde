@@ -36,8 +36,7 @@ boolean downState = false;
 void setup() {
 	size(640, 480, P2D);
 	frameRate(60);
-  pixelDensity(2);
-	bg = loadImage("img/bg.jpg");
+ 	bg = loadImage("img/bg.jpg");
 	title = loadImage("img/title.jpg");
 	gameover = loadImage("img/gameover.jpg");
 	gamewin = loadImage("img/gamewin.jpg");
