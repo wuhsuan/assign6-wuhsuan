@@ -15,16 +15,19 @@ class Dinosaur extends Enemy {
      
      if( x+w > width || x<0 ) { speed*=-1; TRIGGERED_SPEED_MULTIPLIER*=-1; }
           
-     if(player.y == y && player.x > x && speed>0  ){                                 
-        if( player.y == y && player.x < x && speed<0 ){
+     if(player.y == y && player.x > x && speed>0  ){ 
+       
+         x+=TRIGGERED_SPEED_MULTIPLIER;
+         
+     }else if( player.y == y && player.x < x && speed<0 ){
        
           x+=TRIGGERED_SPEED_MULTIPLIER;
            
-        }else{
+     }else{
           x+=speed;
         }
      }
-   }
+   
    
    void display(){
      int direction = (speed > 0)? RIGHT:LEFT;
